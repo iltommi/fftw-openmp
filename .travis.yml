@@ -9,6 +9,7 @@ script:
  - brew update; brew tap homebrew/science
  - brew install --build-bottle fftw --with-openmp
  - brew bottle fftw
+ - export RELEASE_FILE=$(ls fftw*bottle*.tar.gz)
  - ls -la
 
 deploy:
@@ -16,7 +17,7 @@ deploy:
   edge:
     branch: releases-fix
   api_key: $github_token
-  file: "fftw-3.3.5.yosemite.bottle.1.tar.gz"
+  file: "${RELEASE_FILE}"
   skip_cleanup: true
   overwrite: true
 
