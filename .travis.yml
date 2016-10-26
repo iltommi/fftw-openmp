@@ -5,16 +5,12 @@ osx_image: xcode7.1
 sudo: required
 
 script:
-- |
-  if [[ "$TRAVIS_OS_NAME" == "osx" ]]
-  then
-    export COMPILER=g++-6
-    brew update; brew tap homebrew/science
-    brew install --build-bottle fftw --with-openmp
-    brew bottle fftw
-    export RELEASE_FILE=fftw*.tar.gz
-    echo ${RELEASE_FILE}
-  fi
+ - export COMPILER=g++-6
+ - brew update; brew tap homebrew/science
+ - brew install --build-bottle fftw --with-openmp
+ - brew bottle fftw
+ - export RELEASE_FILE=fftw*.tar.gz
+ - echo ${RELEASE_FILE}
 
 deploy:
   provider: releases
@@ -24,3 +20,4 @@ deploy:
   file: "${RELEASE_FILE}"
   skip_cleanup: true
   overwrite: true
+
