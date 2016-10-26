@@ -16,7 +16,7 @@ deploy:
   edge:
     branch: releases-fix
   api_key: $github_token
-  file: "*bottle*.tar.gz"
+  file: "fftw-3.3.5.yosemite.bottle.1.tar.gz"
   skip_cleanup: true
   overwrite: true
 
