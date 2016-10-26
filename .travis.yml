@@ -9,15 +9,13 @@ script:
  - brew update; brew tap homebrew/science
  - brew install --build-bottle fftw --with-openmp
  - brew bottle fftw
- - export RELEASE_FILE=(fftw*.tar.gz)
- - echo ${RELEASE_FILE}
 
 deploy:
   provider: releases
   edge:
     branch: releases-fix
   api_key: $github_token
-  file: "${RELEASE_FILE}"
+  file: "*bottle*.tar.gz"
   skip_cleanup: true
   overwrite: true
 
