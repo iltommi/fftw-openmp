@@ -9,6 +9,7 @@ script:
  - brew update; brew tap homebrew/science
  - brew install --build-bottle fftw --with-openmp
  - brew bottle fftw
+ - ls -la
 
 deploy:
   provider: releases
