@@ -9,7 +9,7 @@ script:
  - brew update; brew tap homebrew/science
  - brew install --build-bottle fftw --with-openmp
  - brew bottle fftw
- - export RELEASE_FILE=fftw*.tar.gz
+ - export RELEASE_FILE=(fftw*.tar.gz)
  - echo ${RELEASE_FILE}
 
 deploy:
